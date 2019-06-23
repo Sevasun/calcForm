@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>calc form</title>
+		<link rel="icon" href="data:;base64,iVBORwOKGO=" />
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="page-wrapper">
+			<div class="container">
+				<div class="form-col">
+					<form class="calc-form">
+						<div class="input-container">
+							<h4>Ready?</h4>
+							<input type="radio" name="ready" id="ready-yes" data-calc data-calc-title="ready yes" data-calc-value="99">
+							<label for="ready-yes">YES</label>
+							<input type="radio" name="ready" id="ready-no" data-calc data-calc-title="ready nope" data-calc-value="29">
+							<label for="ready-no">NO</label>
+						</div>
+						<div class="input-container">
+							<h4>Steady...</h4>
+							<input type="radio" name="steady" id="steady-yes">
+							<label for="steady-yes">yes</label>
+							<input type="radio" name="steady" id="steady-no">
+							<label for="steady-no">no</label>
+						</div>
+						<div class="input-container">
+							<h4>Go!</h4>
+							<input type="checkbox" name="go-yes" id="go-yes">
+							<label for="go-yes">Yes</label>
+							<input type="checkbox" name="go-no" id="go-no">
+							<label for="go-no">No</label>
+						</div>
+					</form>
+				</div>
+				<div class="sidebar">
+					<div class="sidebar-content">
+						<div class="sidebar-block">
+							
+						</div>
+						<div class="sidebar-row">
+							<strong class="title">Total</strong>
+							<strong class="total-value"></strong>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/script.js"></script>
+	</body>
+</html>
