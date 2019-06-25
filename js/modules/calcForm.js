@@ -12,9 +12,12 @@ function CalcForm(options) {
 
         el.addEventListener('change', function() {
             totalValue = 0;
+            cleanRows();
             receiveDataFromChecked(inputs);
             updateTotalValue(totalValue);
         });
+
+        
 
         receiveDataFromChecked(inputs);
 
@@ -42,6 +45,7 @@ function CalcForm(options) {
     function cleanRows() {
         let holder = document.querySelector('.sidebar-block');
         holder.innerHTML = '';
+        console.log(holder);
     }
 
     function createRow(name, val) {
