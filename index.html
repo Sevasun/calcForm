@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>calc form</title>
+		<title>Ferrari Calc Form</title>
 		<link rel="icon" href="data:;base64,iVBORwOKGO=" />
 		<link href="css/styles.css" rel="stylesheet">
 	</head>
@@ -11,27 +11,121 @@
 		<div class="page-wrapper">
 			<div class="container">
 				<div class="form-col">
+					<div class="form-header">
+						<h2>Choose preferable configuration of your favorite Ferrari!</h2>
+						<p>Ferrari calc form is a simple JS plugin used to calculate selected options in order form automatically and to transfer that options to separate block (usualy it is a sidebar, that fixed in top-right corner of window). Ferrari calc form exists in pure Javascript, jQuery and React versions - just choose one that fits to your project!</p>
+					</div>
 					<form class="calc-form">
-						<div class="input-container">
-							<h4>Ready?</h4>
-							<input type="radio" name="ready" id="ready-yes" data-calc data-calc-title="ready yes" data-calc-value="99" checked>
-							<label for="ready-yes">YES</label>
-							<input type="radio" name="ready" id="ready-no" data-calc data-calc-title="ready nope" data-calc-value="29">
-							<label for="ready-no">NO</label>
+						<div class="fieldset">
+							<h4>Choose model</h4>
+							<div class="input-row">
+								<div class="input-container">
+									<label>
+										<input type="radio" name="model" data-calc data-calc-title="Ferrari 488 GTB" data-calc-value="252800" checked>
+										<div class="fake-label">
+											<div class="img-holder">
+												<img src="https://cdn.carbuzz.com/gallery-images/2017-ferrari-488-gtb-front-view-driving-carbuzz-341329-840x560.jpg" alt="Ferrari 488 GTB">
+											</div>
+											<strong class="title">Ferrari 488 GTB</strong>
+											<strong class="price">$252,800</strong>
+										</div>
+									</label>
+								</div>
+								<div class="input-container">
+									<label>
+										<input type="radio" name="model" data-calc data-calc-title="Ferrari 488 Spider" data-calc-value="280900" checked>
+										<div class="fake-label">
+											<div class="img-holder">
+												<img src="https://cdn.carbuzz.com/gallery-images/2018-ferrari-488-spider-carbuzz-398221-840x560.jpg" alt="Ferrari 488 Spider">
+											</div>
+											<strong class="title">Ferrari 488 Spider</strong>
+											<strong class="price">$280,900</strong>
+										</div>
+									</label>
+								</div>
+								<div class="input-container">
+									<label>
+										<input type="radio" name="model"data-calc data-calc-title="Ferrari 812 Superfast" data-calc-value="363700" checked>
+										<div class="fake-label">
+											<div class="img-holder">
+												<img src="https://cdn.carbuzz.com/gallery-images/2018-ferrari-812-superfast-ferrari-812-superfast-carbuzz-361146-840x560.jpg" alt="Ferrari 812 Superfast">
+											</div>
+											<strong class="title">Ferrari 812 Superfast</strong>
+											<strong class="price">$363,700</strong>
+										</div>
+									</label>
+								</div>
+							</div>
 						</div>
-						<div class="input-container">
-							<h4>Steady...</h4>
-							<input type="radio" name="steady" id="steady-yes" data-calc data-calc-title="steady yes" data-calc-value="9">
-							<label for="steady-yes">yes</label>
-							<input type="radio" name="steady" id="steady-no" data-calc data-calc-title="steady no" data-calc-value="11">
-							<label for="steady-no">no</label>
+						<div class="fieldset">
+							<h4>Choose color</h4>
+							<div class="input-row">
+								<div class="input-container">
+									<label>
+										<input type="radio" name="color" data-calc data-calc-title="Red" data-calc-value="0">
+										<div class="fake-label">
+											<div class="color-holder red"></div>
+											<strong class="title">Red</strong>
+											<strong class="price">$0</strong>
+										</div>
+									</label>
+								</div>
+								<div class="input-container">
+									<label>
+										<input type="radio" name="color" data-calc data-calc-title="Blue" data-calc-value="999">
+										<div class="fake-label">
+											<div class="color-holder blue"></div>
+											<strong class="title">Blue</strong>
+											<strong class="price">$999</strong>
+										</div>
+									</label>
+								</div>
+							</div>
 						</div>
-						<div class="input-container">
-							<h4>Go!</h4>
-							<input type="checkbox" name="go-yes" id="go-yes">
-							<label for="go-yes">Yes</label>
-							<input type="checkbox" name="go-no" id="go-no">
-							<label for="go-no">No</label>
+						<div class="fieldset">
+							<h4>Choose options</h4>
+							<div class="input-row">
+								<div class="input-container">
+									<label>
+										<input type="checkbox" name="nitro">
+										<div class="fake-label">
+											<div class="icon-holder">
+												<img src="" alt="">
+											</div>
+											<strong class="title">Nitro</strong>
+											<strong class="price"></strong>
+										</div>
+									</label>
+								</div>
+								<div class="input-container">
+									<label>
+										<input type="checkbox" name="backlight">
+										<div class="fake-label">
+											<div class="icon-holder">
+												<img src="" alt="">
+											</div>
+											<strong class="title">Backlight</strong>
+											<strong class="price"></strong>
+										</div>
+									</label>
+								</div>
+								<div class="input-container">
+									<label>
+										<input type="checkbox" name="aezakmi">
+										<div class="fake-label">
+											<div class="icon-holder">
+												<img src="" alt="">
+											</div>
+											<strong class="title">aezakmi</strong>
+											<strong class="price"></strong>
+										</div>
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="fieldset">
+							<h4><label>How many cars you need?</label></h4>
+							<input type="number" data-calc data-multiply min="1" max="99">
 						</div>
 					</form>
 				</div>
