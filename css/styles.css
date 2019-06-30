@@ -57,8 +57,14 @@ img {
 
 .input-container {
   flex: 1;
+  max-width: 50%;
   margin: 0 10px;
   box-shadow: 0 1px 3px #eee;
+  transition: box-shadow .5s ease;
+}
+
+.input-container:hover {
+  box-shadow: 0 3px 5px #ccc;
 }
 
 label {
@@ -66,6 +72,12 @@ label {
   width: 100%;
   height: 100%;
   overflow: hidden;
+}
+
+input[type="number"] {
+  display: block;
+  width: 50%;
+  padding: 7px 15px;
 }
 
 input[type="radio"],
@@ -87,6 +99,8 @@ input[type="checkbox"] {
   border: 2px solid transparent;
   padding: 0 15px 25px;
   text-align: center;
+  cursor: pointer;
+  transition: outline .3s ease;
 }
 
 input[type="radio"]:checked + .fake-label,
@@ -129,6 +143,10 @@ input[type="checkbox"]:checked + .fake-label {
   margin-bottom: 0.5em;
 }
 
+.title:only-child {
+  margin-bottom: 0;
+}
+
 .price {
   display: block;
   font-weight: 700;
@@ -141,4 +159,16 @@ input[type="checkbox"]:checked + .fake-label {
   max-width: 75%;
   margin: 0 auto;
   font-size: 16px;
+}
+
+.sidebar-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.total-value {
+  color: red;
+  font-weight: 700;
 }

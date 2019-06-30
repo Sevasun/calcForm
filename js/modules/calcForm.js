@@ -2,6 +2,8 @@ function CalcForm(options) {
     let inputs = document.querySelectorAll('[data-calc]');
     let totalValueField = document.querySelectorAll('.total-value');
     let totalValue = 0;
+
+    cleanRows();
     
     inputs.forEach((el) => {
         // let value = +el.dataset.calcValue;
@@ -16,13 +18,11 @@ function CalcForm(options) {
             receiveDataFromChecked(inputs);
             updateTotalValue(totalValue);
         });
-
-        
-
-        receiveDataFromChecked(inputs);
-
-        updateTotalValue(totalValue);
     });
+
+    receiveDataFromChecked(inputs);
+
+    updateTotalValue(totalValue);
 
     function updateTotalValue(totalValue) {
         return totalValueField[0].innerHTML = `${totalValue}$`;
@@ -33,6 +33,7 @@ function CalcForm(options) {
         let checked = elems.filter((item) => {
             return item.checked;
         });
+        
         checked.forEach((elem) => {
             let value = +elem.dataset.calcValue;
             let title = elem.dataset.calcTitle;
@@ -45,7 +46,6 @@ function CalcForm(options) {
     function cleanRows() {
         let holder = document.querySelector('.sidebar-block');
         holder.innerHTML = '';
-        console.log(holder);
     }
 
     function createRow(name, val) {
