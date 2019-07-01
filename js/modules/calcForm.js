@@ -1,18 +1,23 @@
 function CalcForm(options) {
-    let inputs = document.querySelectorAll('[data-calc]');
+    let defaults = {
+        inputsSelector: '[data-calc]',
+        multiplyInputSelector: '[data-multiply]',
+        targetBlock: '.sidebar-block'
+    };
+
+    let {inputsSelector, multiplyInputSelector, targetBlock} = {...defaults, ...options};
+
+    let inputs = document.querySelectorAll(inputsSelector);
     let totalValueField = document.querySelectorAll('.total-value');
     let totalValue = 0;
+    let multiply = document.querySelector(multiplyInputSelector);
+    let multiplyValue = +multiply.value || 1;
 
     cleanRows();
     
     inputs.forEach((el) => {
-        // let value = +el.dataset.calcValue;
-
-        // if (el.checked) {
-        //     totalValue += value;
-        // };
-
         el.addEventListener('change', function() {
+            multiplyValue = +multiply.value || 1;
             totalValue = 0;
             cleanRows();
             receiveDataFromChecked(inputs);
@@ -25,7 +30,7 @@ function CalcForm(options) {
     updateTotalValue(totalValue);
 
     function updateTotalValue(totalValue) {
-        return totalValueField[0].innerHTML = `${totalValue}$`;
+        return totalValueField[0].innerHTML = `${totalValue * multiplyValue}$`;
     };
 
     function receiveDataFromChecked(elements) {
@@ -44,12 +49,12 @@ function CalcForm(options) {
     };
 
     function cleanRows() {
-        let holder = document.querySelector('.sidebar-block');
+        let holder = document.querySelector(targetBlock);
         holder.innerHTML = '';
     }
 
     function createRow(name, val) {
-        let holder = document.querySelector('.sidebar-block');
+        let holder = document.querySelector(targetBlock);
         let row = document.createElement('div');
         let titleBlock = document.createElement('div');
         let valueBlock = document.createElement('div');
